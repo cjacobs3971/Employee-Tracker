@@ -2,7 +2,7 @@
 
 const inquirer = require('inquirer');
 const {
-  getAllDepartments,
+  getAllDepartments, getAllRoles
   // Import other functions for database operations
 } = require('./db');
 
@@ -16,6 +16,12 @@ function start() {
         message: 'Please select an option:',
         choices: [
           'View all departments',
+          'view all roles', 
+          'view all employees', 
+          'add a department', 
+          'add a role', 
+          'add an employee', 
+          'update an employee role',
           // Add more choices for other functionalities
           'Exit',
         ],
@@ -35,6 +41,77 @@ function start() {
               start(); // Prompt the user with the menu again
             });
           break;
+          case 'view all roles':
+          // Call the function to retrieve and display all departments
+          getAllRoles()
+            .then((roles) => {
+              console.log(roles);
+              start(); // Prompt the user with the menu again
+            })
+            .catch((error) => {
+              console.error(error);
+              start(); // Prompt the user with the menu again
+            });
+          break;
+          case 'View all employees':
+            getAllEmployees()
+              .then((employees) => {
+                console.log(employees);
+                start();
+              })
+              .catch((error) => {
+                console.error(error);
+                start();
+              });
+            break;
+        
+          case 'Add a department':
+            addDepartment()
+              .then(() => {
+                console.log('Department added successfully!');
+                start();
+              })
+              .catch((error) => {
+                console.error(error);
+                start();
+              });
+            break;
+        
+          case 'Add a role':
+            addRole()
+              .then(() => {
+                console.log('Role added successfully!');
+                start();
+              })
+              .catch((error) => {
+                console.error(error);
+                start();
+              });
+            break;
+        
+          case 'Add an employee':
+            addEmployee()
+              .then(() => {
+                console.log('Employee added successfully!');
+                start();
+              })
+              .catch((error) => {
+                console.error(error);
+                start();
+              });
+            break;
+        
+          case 'Update an employee role':
+            updateEmployeeRole()
+              .then(() => {
+                console.log('Employee role updated successfully!');
+                start();
+              })
+              .catch((error) => {
+                console.error(error);
+                start();
+              });
+            break;
         // Add cases for other menu choices
         case 'Exit':
           console.log('Goodbye!');
