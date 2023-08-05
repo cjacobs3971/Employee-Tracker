@@ -2,7 +2,10 @@
 
 const inquirer = require('inquirer');
 const {
-  getAllDepartments, getAllRoles
+  getAllDepartments,
+    getAllEmployees,
+    getAllRoles,
+    updateEmployeeRole, 
   // Import other functions for database operations
 } = require('./db');
 
@@ -17,7 +20,7 @@ function start() {
         choices: [
           'View all departments',
           'view all roles', 
-          'view all employees', 
+          'View all employees', 
           'add a department', 
           'add a role', 
           'add an employee', 

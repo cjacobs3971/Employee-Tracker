@@ -24,7 +24,8 @@ async function getAllManagers() {
   }
   async function getAllEmployees() {
     try {
-      const [rows] = await connection.query('SELECT * FROM employeess');
+      const [rows] = await connection.query('SELECT * FROM employees');
+      console.log("made it here");
       return rows;
     } catch (error) {
       throw error;
@@ -39,7 +40,7 @@ async function getAllManagers() {
     }
   }
 // Create a new employee
-async function createEmployee(employee) {
+async function addEmployee(employee) {
     return connection.promise().query("INSERT INTO employees SET ?", employee);
   }
   
@@ -71,7 +72,7 @@ module.exports = {
     getAllManagers,
     getAllEmployees,
     getAllRoles,
-    createEmployee,
+    addEmployee,
     updateEmployeeRole,
     removeEmployee,
     updateEmployeeManager,
