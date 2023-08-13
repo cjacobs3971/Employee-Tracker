@@ -1,16 +1,12 @@
 # Employee Tracker
 
-A command-line application for managing a company's employee database. This application allows users to view and manage departments, roles, and employees using Node.js, Inquirer, and MySQL.
+A command-line application for managing a company's employee database. This application allows users to view and manage departments, roles, and employees using Node.js, Inquirer, and MySQL. instructions video link: https://drive.google.com/file/d/1rbhjBrnQ9DO6rv791BKp2AXx0VsKulDc/view?usp=drive_link
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
-- [Demo](#demo)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Installation
 
@@ -26,7 +22,7 @@ cd Employee-Tracker
 npm install
 
 3- Set up your MySQL database:
-Create a database named employee_db.
+Create a database named employees.
 Run the SQL scripts from db/schema.sql to create the necessary tables.
 
 4- Update the MySQL connection settings:
@@ -37,7 +33,7 @@ Open the db/connection.js file and update the host, user, password, and database
 node index
 
 
-                                Usage
+## Usage
 When you run the application, you'll be presented with a menu of options. You can use the arrow keys to navigate through the options and press Enter to select one. Here are the available options:
 
 View all departments
@@ -50,7 +46,7 @@ Update an employee role
 Exit
 Choose an option to perform the corresponding action.
 
-                                Features
+## Features
 View and manage departments, roles, and employees.
 Add new departments, roles, and employees.
 Update the role of an existing employee.
